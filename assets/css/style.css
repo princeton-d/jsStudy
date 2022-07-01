@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.greeting {
+  text-align: center;
+}
+
+.clock {
+  text-align: center;
+}
+
+.gust-box {
+  text-align: center;
+}
+
+.reset-area {
+  text-align: center;
+}
+
+.sign-up-area {
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+}
