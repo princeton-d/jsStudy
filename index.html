@@ -10,6 +10,7 @@
   <script defer src="assets/js/main.js"></script>
   <script defer src="assets/js/clock.js"></script>
   <script defer src="assets/js/login.js"></script>
+  <script defer src="assets/js/morse-code.js"></script>
 </head>
 
 <body>
@@ -34,6 +35,17 @@
     <input required id="user-password-input" type="password">
     <input id="user-login-button" value="log in" type="submit">
   </form>
+  <!-- morse-code -->
+  <section class="morse-code">
+    <div class="morse-code-container">
+      <div class="morse-input-area">
+        <form id="morse-input-form">
+          <input id="morse-input-input" type="text">
+        </form>
+      </div>
+      <div id="morse-output-area" class="morse-output-area"></div>
+    </div>
+  </section>
 </body>
 
 </html>
