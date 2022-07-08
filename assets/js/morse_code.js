@@ -8,7 +8,7 @@ const morseOutputArea = document.querySelector('#morse-output-area')
 let morseArr;
 
 // morseCodeArea
-const morseCode = { '\u00a0': ' ', a: '·--', b: '-···', c: '-·-·', d: '-··', e: '·', f: '··-·', g: '--·', h: '····', i: '··', j: '·---', k: '-·-', l: '·-··', m: '--', n: '-·', o: '---', p: '·--·', q: '--·-', r: '·-·', s: '···', t: '-', u: '··-', v: '···-', w: '·--', x: '-··-', y: '-·--', z: '--··', zero: '-----', one: '·----', two: '··---', three: '···--', four: '····-', five: '·····', six: '-····', seven: '--···', eight: '---··', nine: '----·', }
+const morseCode = { '\u00a0': ' ', 1: '·----', 2: '··---', 3: '···--', 4: '····-', 5: '·····', 6: '-····', 7: '--···', 8: '---··', 9: '----·', a: '·--', b: '-···', c: '-·-·', d: '-··', e: '·', f: '··-·', g: '--·', h: '····', i: '··', j: '·---', k: '-·-', l: '·-··', m: '--', n: '-·', o: '---', p: '·--·', q: '--·-', r: '·-·', s: '···', t: '-', u: '··-', v: '···-', w: '·--', x: '-··-', y: '-·--', z: '--··', zero: '-----', }
 
 // event
 morseInputForm.addEventListener('submit', startPreventDefault);
@@ -33,6 +33,7 @@ function morseText() {
         morse[i] === undefined ? outPutText += '\u00a0\u00a0\u00a0\u00a0\u00a0' : outPutText += `${morse[i]} `
       }
       morseOutputArea.innerText = outPutText;
+      console.log('good')
     }
   }
 }
