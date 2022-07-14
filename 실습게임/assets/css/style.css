@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrap {
+  position: relative;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 50px;
+}
+
+.game-over,
+.game-clear {
+  position: absolute;
+  left: 75px;
+  bottom: 30px;
+  width: 650px;
+  height: 300px;
+  background-color: rgba(128, 128, 128, 0.8);
+  z-index: 9;
+  border-radius: 50px;
+  font-size: 10em;
+  text-align: center;
+  line-height: 300px;
+}
+
+main {
+  position: relative;
+  width: 800px;
+  height: 450px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: url(../img/background.png) no-repeat center;
+  background-size: contain;
+}
+
+.top-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.play-stop-button {
+  width: 40px;
+  height: 40px;
+  margin: 5px 0;
+  border: 3px solid black;
+  border-radius: 8px;
+  background-color: blanchedalmond;
+}
+
+.timelimit-box {
+  width: 120px;
+  height: 40px;
+  margin: 3px 0;
+  border: 3px solid black;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 24px;
+  text-align: center;
+  line-height: 37px;
+}
+
+.score-box {
+  width: 40px;
+  height: 40px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: tomato;
+  font-size: 2.5em;
+  text-align: center;
+  line-height: 40px;
+}
+
+.item-area {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 220px;
+}
+
+.bug,
+.carrot {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}

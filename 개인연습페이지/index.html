@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Momentum</title>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/clock.js"></script>
+  <script defer src="assets/js/login.js"></script>
+  <script defer src="assets/js/morse_code.js"></script>
+</head>
+
+<body>
+  <!-- 시계 -->
+  <h2 class="clock" id="clock"></h2>
+  <!-- 게스트 방문 -->
+  <form class="hidden gust-box" id="guest-form">
+    <input class="gust-box__input" required maxlength="15" type="text" placeholder="What is your name?">
+    <input class="gust-box__button" type="submit" value="Visit">
+  </form>
+  <h1 id="greeting" class="hidden greeting"></h1>
+  <div class="reset-area">
+    <button id="reset-button" class="hidden">reset</button>
+  </div>
+  <div class="sign-up-area">
+    <button class="sign-up-button" id="sign-up-button">go sign up</button>
+  </div>
+  <form class="login-form" id="login-form">
+    <label for="user-id-input">ID:</label>
+    <input required id="user-id-input" type="text">
+    <label for="user-password-input">password:</label>
+    <input required id="user-password-input" type="password">
+    <input id="user-login-button" value="log in" type="submit">
+  </form>
+  <!-- morse-code -->
+  <section class="morse-code">
+    <div class="morse-code-container">
+      <div class="morse-input-area">
+        <form id="morse-input-form">
+          <input id="morse-input-input" type="text">
+        </form>
+      </div>
+      <div id="morse-output-area" class="morse-output-area"></div>
+    </div>
+  </section>
+</body>
+
+</html>
