@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  /* cursor: none; */
+}
+
+/* toggle class */
+.cursor-off {
+  cursor: none;
+}
+
+.off-view {
+  display: none !important;
+}
+
+.cursor-in {
+  position: absolute;
+  color: rgb(243, 242, 241);
+}
+
+/* 공통영역 */
+body {
+  background-color: rgb(35, 33, 33);
+}
+
+.wrap {
+  width: 100vw;
+  height: 100vh;
+}
+
+.welcome-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.welcome-page__input {
+  text-align: center;
+  width: 200px;
+  height: 25px;
+  border: 0;
+  background-color: black;
+  color: rgba(188, 194, 200, 0.793);
+}
+
+.morse-code-area {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vh;
+  border-radius: 20px;
+  background-color: antiquewhite;
+}
+
+.morse-code-area__close-button {
+  border: 0;
+  background-color: transparent;
+}
+
+.morse-input-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.morse-input-area,
+.morse-output-area {
+  text-align: center;
+  width: 45%;
+  height: 90%;
+  padding: 20px;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  resize: none;
+}
