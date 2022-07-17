@@ -2,7 +2,10 @@
   margin: 0;
   padding: 0;
   outline: 0;
-  /* cursor: none; */
+}
+
+ul {
+  list-style: none;
 }
 
 /* toggle class */
@@ -16,7 +19,7 @@
 
 .cursor-in {
   position: absolute;
-  color: rgb(243, 242, 241);
+  color: rgb(96, 88, 80);
 }
 
 /* 공통영역 */
@@ -29,6 +32,16 @@ body {
   height: 100vh;
 }
 
+.open-gate {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  background-color: black;
+}
+
 .welcome-page {
   display: flex;
   justify-content: center;
@@ -39,11 +52,89 @@ body {
 
 .welcome-page__input {
   text-align: center;
+  z-index: 9;
   width: 200px;
   height: 25px;
   border: 0;
   background-color: black;
   color: rgba(188, 194, 200, 0.793);
+}
+
+.menu-box {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+  left: 0;
+  top: 0;
+  animation: blur 1s alternate ease-in;
+}
+
+@keyframes blur {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blur-out {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.contents-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 26vw;
+  height: 25vh;
+  min-width: 150px;
+  min-height: 150px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: floralwhite;
+  transition: all .3s;
+}
+
+.contents-box:hover {
+  transform: scale(1.1);
+}
+
+.morse-code-box__text {
+  font-size: 2vh;
+}
+
+.morse-box__icon {
+  font-size: 15vh;
+}
+
+.contents-area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 4, 255, 0.623);
 }
 
 .morse-code-area {
@@ -80,4 +171,91 @@ body {
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   resize: none;
+  cursor: none;
+}
+
+
+/* tetris */
+.tetris-area {
+  /* height: 100%; */
+  /* overflow: hidden; */
+  /* background-color: white; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vh;
+  border-radius: 20px;
+  background-color: antiquewhite;
+}
+
+.game-text {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  color: #fff;
+  font-size: 50px;
+}
+
+.game-text>button {
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background: salmon;
+  border: none;
+}
+
+.playground>ul {
+  border: 1px solid #333;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.playground>ul>li {
+  width: 100%;
+  height: 25px;
+}
+
+.playground>ul>li>ul {
+  display: flex;
+}
+
+.playground>ul>li>ul>li {
+  width: 25px;
+  height: 25px;
+  outline: 1px solid #ccc;
+}
+
+.tree {
+  background: #67c23a;
+}
+
+.bar {
+  background: salmon;
+}
+
+.zee {
+  background: #e6a23c;
+}
+
+.elLeft {
+  background: #8e44ad;
+}
+
+.elRight {
+  background: #16a085;
+}
+
+.square {
+  background: blue;
 }

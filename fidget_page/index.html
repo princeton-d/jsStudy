@@ -12,15 +12,43 @@
 
 <body>
   <div class="wrap">
+    <div class="open-gate"></div>
     <form class="welcome-page">
       <input class="welcome-page__input" type="text" required placeholder="커서에 적용할 text를 입력해주세요." maxlength="20">
     </form>
-    <div class="morse-code-area off-view">
-      <form class="morse-input-form">
-        <textarea class="morse-input-area"></textarea>
-        <textarea class="morse-output-area"></textarea>
-      </form>
-    </div>
+    <section class="menu-box off-view">
+      <div class="morse-code-box contents-box">
+        <p class="morse-code-box__text">morse code</p>
+        <i class="fa-brands fa-hashnode morse-box__icon"></i>
+      </div>
+      <div class="tetris-box contents-box"></div>
+      <div class="morse-code-box contents-box"></div>
+      <div class="morse-code-box contents-box"></div>
+      <div class="morse-code-box contents-box"></div>
+      <div class="morse-code-box contents-box"></div>
+      <div class="morse-code-box contents-box"></div>
+      <div class="morse-code-box contents-box"></div>
+      <div class="morse-code-box contents-box"></div>
+    </section>
+    <section class="contents-area off-view">
+      <div class="morse-code-area off-view">
+        <form class="morse-input-form">
+          <textarea class="morse-input-area"></textarea>
+          <textarea class="morse-output-area"></textarea>
+        </form>
+      </div>
+      <div class="tetris-area">
+        <div class="wrapper">
+          <div class="game-text">
+            <span>game over</span>
+            <button>replay</button>
+          </div>
+          <div class="playground">
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
 </body>
