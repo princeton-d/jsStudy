@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   outline: 0;
+  box-sizing: border-box;
 }
 
 ul {
@@ -120,11 +121,11 @@ body {
   transform: scale(1.1);
 }
 
-.morse-code-box__text {
+.box-text {
   font-size: 2vh;
 }
 
-.morse-box__icon {
+.box-icon {
   font-size: 15vh;
 }
 
@@ -177,9 +178,6 @@ body {
 
 /* tetris */
 .tetris-area {
-  /* height: 100%; */
-  /* overflow: hidden; */
-  /* background-color: white; */
   display: none;
   align-items: center;
   justify-content: center;
@@ -258,4 +256,72 @@ body {
 
 .square {
   background: blue;
+}
+
+/* calculator */
+.calculator-area {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vh;
+  min-width: 320px;
+  min-height: 320px;
+  border-radius: 20px;
+  background-color: antiquewhite;
+}
+
+.calculator-area>.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.calculator-display {
+  display: flex;
+  justify-content: flex-end;
+  width: 308px;
+  height: 50px;
+  margin: 1px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 30px;
+  background-color: #333;
+  color: #fff;
+  overflow: scroll;
+}
+
+.calculator-button>ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator-button>ul>li>ul {
+  display: flex;
+}
+
+.calculator-button>ul>li>ul>li>button {
+  width: 60px;
+  height: 40px;
+  margin: 1px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  background-color: #333;
+}
+
+.calculator-button>ul>li>ul>li>button:hover {
+  background-color: gray;
+}
+
+.calculator-button>ul>li>ul>li>button:active {
+  color: #333;
+  background-color: rgb(180, 180, 180);
 }

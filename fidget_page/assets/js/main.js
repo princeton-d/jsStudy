@@ -1,3 +1,4 @@
+
 'use strict';
 // variable
 
@@ -16,8 +17,8 @@ contentsArea.addEventListener('click', resetContent)
 function handleWelcomeInput(e) {
   const cursorText = welcomePageInput.value;
   e.preventDefault();
-  cursorOff();
-  toggleView(welcomePageInput);
+  cursorOff(); // 기본 커서를 지운다
+  toggleView(welcomePageInput); //
   makeCursor(cursorText);
   toggleView(menuBox)
   openGate()
@@ -325,3 +326,17 @@ restartButton.addEventListener('click', () => {
   gameText.style.display = 'none';
   init();
 })
+
+
+
+
+// calculator
+// DOM
+const calculatorArea = document.querySelector('.calculator-area')
+const calculatorDisplay = document.querySelector('.calculator-display')
+console.log(calculatorArea);
+
+// setting
+// variables
+// functions
+// event handling

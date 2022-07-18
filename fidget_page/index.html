@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>fidget page</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
   <script src="https://kit.fontawesome.com/465b8b0b8e.js" crossorigin="anonymous"></script>
@@ -18,10 +18,13 @@
     </form>
     <section class="menu-box off-view">
       <div class="morse-code-box contents-box">
-        <p class="morse-code-box__text">morse code</p>
-        <i class="fa-brands fa-hashnode morse-box__icon"></i>
+        <p class="morse-code-box__text box-text">morse code</p>
+        <i class="fa-brands fa-hashnode box-icon"></i>
       </div>
-      <div class="tetris-box contents-box"></div>
+      <div class="tetris-box contents-box">
+        <p class="tetris-box__text box-text">tetris</p>
+        <i class="fa-solid fa-cubes-stacked box-icon"></i>
+      </div>
       <div class="morse-code-box contents-box"></div>
       <div class="morse-code-box contents-box"></div>
       <div class="morse-code-box contents-box"></div>
@@ -48,9 +51,69 @@
           </div>
         </div>
       </div>
+
     </section>
   </div>
 
+
+  <div class="calculator-area">
+    <div class="wrapper">
+      <div class="calculator-body">
+        <div class="calculator-display"></div>
+        <div class="calculator-display"></div>
+        <div class="calculator-button">
+          <ul>
+            <li>
+              <ul>
+                <li><button onclick="calculatorDisplay.innerHTML = ''">C</button></li>
+                <li><button onclick="calculatorDisplay.innerText += '('">(</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=')'">)</button></li>
+                <li><button onclick="calculatorDisplay.innerText +='%'">%</button></li>
+                <li><button onclick="calculatorDisplay.innerText = calculatorDisplay.innerText.slice(0,-1)">CE</button>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><button>❓</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=1">1</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=2">2</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=3">3</button></li>
+                <li><button onclick="calculatorDisplay.innerText +='/'">/</button></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><button>❗️</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=4">4</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=5">5</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=6">6</button></li>
+                <li><button onclick="calculatorDisplay.innerText +='*'">x</button></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><button onclick="calculatorDisplay.innerText +='.'">.</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=7">7</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=8">8</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=9">9</button></li>
+                <li><button onclick="calculatorDisplay.innerText +='-'">-</button></li>
+              </ul>
+            </li>
+            <li>
+              <ul>
+                <li><button onclick="calculatorDisplay.innerText = eval(calculatorDisplay.innerText)">=</button></li>
+                <li><button>*</button></li>
+                <li><button onclick="calculatorDisplay.innerText +=0">0</button></li>
+                <li><button>#</button></li>
+                <li><button onclick="calculatorDisplay.innerText +='+'">+</button></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
