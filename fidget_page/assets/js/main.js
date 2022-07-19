@@ -1,4 +1,4 @@
-
+/*
 'use strict';
 // variable
 
@@ -28,6 +28,7 @@ function handleWelcomeInput(e) {
 function resetContent(event) {
   if (event.target === contentsArea) {
     removeTetris()
+    removeCalculator()
     contentsArea.classList.add('off-view')
     morseCodeArea.classList.add('off-view')
     // toggleView(contentsArea)
@@ -332,11 +333,82 @@ restartButton.addEventListener('click', () => {
 
 // calculator
 // DOM
+const calculatorBox = document.querySelector('.calculator-box')
 const calculatorArea = document.querySelector('.calculator-area')
 const calculatorDisplay = document.querySelector('.calculator-display')
-console.log(calculatorArea);
 
 // setting
 // variables
 // functions
+function handleCalculatorBox() {
+  toggleView(contentsArea)
+  calculatorArea.style.display = 'flex';
+  onBler(calculatorArea, 0.4)
+}
+function removeCalculator() {
+  calculatorArea.style.display = 'none';
+}
 // event handling
+calculatorBox.addEventListener('click', handleCalculatorBox)
+
+
+*/
+
+// instakilogram
+// DOM
+const instakilogramArea = document.querySelector('.instakilogram-area');
+const instakilogramLoginForm = document.querySelector('.instakilogram-login-form');
+const instakilogramIdInput = document.querySelector('.instakilogram-id-input');
+const instakilogramPasswordInput = document.querySelector('.instakilogram-password-input');
+const instakilogramLoginButton = document.querySelector('.instakilogram-login-button');
+const savedId = document.querySelector('.saved-id');
+
+// setting
+const LOGIN_ID = 'kingGodEmperorWebsteak';
+const LOGIN_PASSWORD = 'I want to get a job.';
+// variables
+// functions
+function showSavedId() { // 저장된 아이디 비밀번호를 화면에 보여줌
+  savedId.style.display = 'block'
+}
+function hideSavedId() { // 저장된 아이디 비밀번호를 화면에서 숨김
+  savedId.style.display = 'none'
+}
+function stopFocusOut() { // FocusOut 이벤트를 중지시켜 아이디 비밀번호 블럭을 클릭할 수 있게 만듦
+  instakilogramIdInput.removeEventListener('focusout', hideSavedId);
+}
+function printIdAndPassword() { // 아이디 비밀번호 칸에 저장된 아이디 비밀번호를 입력한다.
+  instakilogramIdInput.value = LOGIN_ID;
+  instakilogramPasswordInput.value = LOGIN_PASSWORD;
+  savedId.style.display = 'none' // 저장된 아이디 비밀번호 디스플플레이 숨김
+  checkActivatingButton() // 로그인버튼 활성화여부 체크
+  return instakilogramIdInput.addEventListener('focusout', hideSavedId); // focusout 이벤트를 다시 활성한다.
+}
+function makeHideSavedIdEvent() { // focusout 이벤트를 활성화한다.
+  return instakilogramIdInput.addEventListener('focusout', hideSavedId);
+}
+function checkActivatingButton() { // id가 5글자 이상, password가 8글자 이상
+  if (instakilogramIdInput.value.length > 5 && instakilogramPasswordInput.value.length > 8) {
+    activatingButton(); // 로그인버튼 활성화
+  } else unActivatingButton(); // 로그인버튼 비활성화
+}
+function activatingButton() {
+  instakilogramLoginButton.style.background = 'rgba(0, 149, 246, 1)' // 로그인버튼 색깔을 활성화 색깔로
+}
+function unActivatingButton() {
+  instakilogramLoginButton.style.background = 'rgba(0, 149, 246, 0.3)' // 로그인버튼 색깔을 비활성화 색깔로
+}
+function checkLoginInfo(e) {
+  e.preventDefault();
+  if (instakilogramIdInput.value === LOGIN_ID && instakilogramPasswordInput.value === LOGIN_PASSWORD) { // 아이디와 비밀번호가 일치한다면
+    console.log('enter')
+  }
+}
+// event handling
+instakilogramLoginForm.addEventListener('keydown', checkActivatingButton) // 로그인 버튼 활성화 여부를 점검함
+instakilogramIdInput.addEventListener('focus', showSavedId); // 저장된 아이디 비밀번호를 화면에 보여줌
+instakilogramIdInput.addEventListener('focusout', hideSavedId); // 저장된 아이디 비밀번호를 화면에서 숨김
+savedId.addEventListener('mouseover', stopFocusOut); // FocusOut 이벤트를 중지시켜 아이디 비밀번호 블럭을 클릭할 수 있게 만듦
+savedId.addEventListener('mouseout', makeHideSavedIdEvent) // focusout 이벤트를 활성화한다.
+savedId.addEventListener('click', printIdAndPassword) // 아이디 비밀번호 칸에 저장된 아이디 비밀번호를 입력한다.
+instakilogramLoginForm.addEventListener('submit', checkLoginInfo) // submit 이벤트가 발생하면 로그인정보를 체크한다.

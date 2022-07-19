@@ -3,6 +3,7 @@
   padding: 0;
   outline: 0;
   box-sizing: border-box;
+  /* cursor: none; */
 }
 
 ul {
@@ -89,20 +90,6 @@ body {
   }
 }
 
-@keyframes blur-out {
-  0% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
 .contents-box {
   display: flex;
   flex-direction: column;
@@ -186,7 +173,9 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   width: 60vw;
+  min-width: 270px;
   height: 60vh;
+  min-height: 390px;
   border-radius: 20px;
   background-color: antiquewhite;
 }
@@ -199,6 +188,7 @@ body {
   position: fixed;
   width: 100%;
   height: 100%;
+  border-radius: 20px;
   background: rgba(0, 0, 0, 0.7);
   left: 0;
   top: 0;
@@ -258,6 +248,8 @@ body {
   background: blue;
 }
 
+
+
 /* calculator */
 .calculator-area {
   display: none;
@@ -269,8 +261,8 @@ body {
   transform: translate(-50%, -50%);
   width: 60vw;
   height: 60vh;
-  min-width: 320px;
-  min-height: 320px;
+  min-width: 330px;
+  min-height: 280px;
   border-radius: 20px;
   background-color: antiquewhite;
 }
@@ -324,4 +316,164 @@ body {
 .calculator-button>ul>li>ul>li>button:active {
   color: #333;
   background-color: rgb(180, 180, 180);
+}
+
+/* instakilogram */
+.instakilogram-area {
+  /* display: none; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  height: 60vh;
+  min-width: 370px;
+  min-height: 410px;
+  border-radius: 20px;
+  background-color: antiquewhite;
+  overflow: scroll;
+}
+
+.instakilogram-login-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 396px;
+  padding: 10px 0;
+  margin: 0 auto;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+}
+
+.instakilogram-logo {
+  margin: 36px 0 12px;
+}
+
+.instakilogram-login-box>div {
+  margin-top: 12px;
+}
+
+.instakilogram-login-form {
+  margin-top: 24px;
+}
+
+.instakilogram-id-input,
+.instakilogram-password-input {
+  width: 268px;
+  height: 38px;
+  background-color: #fafafa;
+  padding: 9px 8px 7px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.instakilogram-login-form>div:nth-child(1),
+.instakilogram-login-form>div:nth-child(2) {
+  margin: 0 40px 6px;
+}
+
+.instakilogram-login-button {
+  width: 268px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 149, 246, 0.3);
+}
+
+.instakilogram-login-form>div:nth-child(3) {
+  margin: 14px 40px 18px;
+}
+
+.instakilogram-login-form>div:nth-child(4) {
+  display: flex;
+  align-items: center;
+  margin: 10px 40px 14px;
+  white-space: nowrap;
+}
+
+.instakilogram-login-form>div:nth-child(4)>div:nth-child(1),
+.instakilogram-login-form>div:nth-child(4)>div:nth-child(3) {
+  border-top: 1px solid #dbdbdb;
+  width: 100%;
+  height: 1px;
+  line-height: 18px;
+}
+
+.facebook-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../images/32f0a4f27407.png) no-repeat;
+  background-position-x: -414px;
+  background-position-y: -259px;
+  margin-right: 8px;
+}
+
+.facebook-login {
+  display: flex;
+  justify-content: center;
+}
+
+.facebook-login:hover .facebook-login__text {
+  color: rgb(112, 151, 188);
+}
+
+.facebook-login__text {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  color: rgb(56, 81, 133);
+}
+
+.instakilogram-login-form>div:nth-child(4)>div:nth-child(2) {
+  margin: 0 18px;
+  line-height: 15px;
+  color: rgb(142, 142, 142);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.find-password {
+  color: rgb(0, 55, 107);
+  font-size: 12px;
+  line-height: 16px;
+  transition: all 0.1s;
+}
+
+.find-password:hover {
+  color: rgb(123, 174, 222);
+  transform: scale(1.01);
+}
+
+.instakilogram-login-form>div:nth-child(5) {
+  margin: 26px 40px 8px;
+}
+
+.saved-id {
+  display: none;
+  position: absolute;
+  left: 30%;
+  top: 42%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #333;
+  color: rgb(208, 208, 208);
+}
+
+.saved-id:hover {
+  background-color: rgb(101, 100, 100);
+}
+
+.saved-id>p {
+  margin-top: 5px;
+  font-size: 12px;
 }
