@@ -1,5 +1,5 @@
-/*
 'use strict';
+/*
 // variable
 
 // DOM
@@ -29,10 +29,9 @@ function resetContent(event) {
   if (event.target === contentsArea) {
     removeTetris()
     removeCalculator()
+    removeInstakilogram()
     contentsArea.classList.add('off-view')
     morseCodeArea.classList.add('off-view')
-    // toggleView(contentsArea)
-    // toggleView(morseCodeArea)
   }
 }
 function openGate() {
@@ -350,24 +349,46 @@ function removeCalculator() {
 }
 // event handling
 calculatorBox.addEventListener('click', handleCalculatorBox)
-
-
 */
+
+
 
 // instakilogram
 // DOM
 const instakilogramArea = document.querySelector('.instakilogram-area');
+const instakilogramBox = document.querySelector('.instakilogram-box')
 const instakilogramLoginForm = document.querySelector('.instakilogram-login-form');
 const instakilogramIdInput = document.querySelector('.instakilogram-id-input');
 const instakilogramPasswordInput = document.querySelector('.instakilogram-password-input');
 const instakilogramLoginButton = document.querySelector('.instakilogram-login-button');
+const loginErrorText = document.querySelector('.login-error-text');
 const savedId = document.querySelector('.saved-id');
+
+
+const hartButton = document.querySelector('.hart-button');
+const commentButton = document.querySelector('.comment-button');
+const telegramButton = document.querySelector('.telegram-button');
+const bookmarkButton = document.querySelector('.bookmark-button');
+const detailViewText = document.querySelector('.detail-view-text');
+const instaContentsText = document.querySelector('.insta-contents-text');
+const likeCount = document.querySelector('.like-count');
 
 // setting
 const LOGIN_ID = 'kingGodEmperorWebsteak';
 const LOGIN_PASSWORD = 'I want to get a job.';
+
+
+let INSTA_LIKE = 30;
 // variables
 // functions
+function handleInstakilogramArea() {
+  toggleView(contentsArea)
+  instakilogramArea.style.display = 'flex';
+  onBler(instakilogramArea, 0.4)
+}
+function removeInstakilogram() {
+  instakilogramArea.style.display = 'none';
+}
 function showSavedId() { // 저장된 아이디 비밀번호를 화면에 보여줌
   savedId.style.display = 'block'
 }
@@ -388,27 +409,68 @@ function makeHideSavedIdEvent() { // focusout 이벤트를 활성화한다.
   return instakilogramIdInput.addEventListener('focusout', hideSavedId);
 }
 function checkActivatingButton() { // id가 5글자 이상, password가 8글자 이상
-  if (instakilogramIdInput.value.length > 5 && instakilogramPasswordInput.value.length > 8) {
+  if (instakilogramIdInput.value.length >= 5 && instakilogramPasswordInput.value.length >= 8) {
     activatingButton(); // 로그인버튼 활성화
-  } else unActivatingButton(); // 로그인버튼 비활성화
+  } else {
+    unActivatingButton() // 로그인버튼 비활성화
+  };
 }
 function activatingButton() {
   instakilogramLoginButton.style.background = 'rgba(0, 149, 246, 1)' // 로그인버튼 색깔을 활성화 색깔로
+  return instakilogramLoginForm.addEventListener('submit', checkLoginInfo) // submit 이벤트가 발생하면 로그인정보를 체크한다.
 }
-function unActivatingButton() {
+function unActivatingButton(e) {
   instakilogramLoginButton.style.background = 'rgba(0, 149, 246, 0.3)' // 로그인버튼 색깔을 비활성화 색깔로
+  hideLoginErrorText() // 로그인 오류 텍스트 숨김
+  return instakilogramLoginForm.removeEventListener('submit', checkLoginInfo)
 }
 function checkLoginInfo(e) {
   e.preventDefault();
   if (instakilogramIdInput.value === LOGIN_ID && instakilogramPasswordInput.value === LOGIN_PASSWORD) { // 아이디와 비밀번호가 일치한다면
-    console.log('enter')
+    login()
+  } else {
+    showLoginErrorText() // 로그인 오류 텍스트 출력
   }
 }
+function showLoginErrorText() { // 로그인 오류 텍스트 출력
+  loginErrorText.style.display = 'block' // none이었던 display를 block로 바꿈
+}
+function hideLoginErrorText() { // 로그인 오류 텍스트 감추기
+  loginErrorText.style.display = 'none' // block었던 display를 none으로 바꿈
+}
+function eventDefault(e) {
+  e.preventDefault();
+}
+function login() {
+
+}
+
+function handleButton(e) {
+  e.target.classList.toggle('fa-regular')
+  e.target.classList.toggle('fa-solid')
+  checkLikeCount() // 좋아요 숫자 컨트롤
+}
+function checkLikeCount() { // 버튼 아이콘에 특정 클레스명이 있으면 좋아요 숫자를 더하거나 빼줌
+  hartButton.classList.contains('fa-regular') ? INSTA_LIKE -= 1 : INSTA_LIKE += 1;
+  likeCount.innerHTML = `${INSTA_LIKE}`;
+}
+function onDetailView() {
+  detailViewText.style.display = 'none'; // 더보기 텍스트 숨김
+  instaContentsText.style.display = 'block'; // display: -webkit-box 상태를 block로 바꿔줌
+}
 // event handling
-instakilogramLoginForm.addEventListener('keydown', checkActivatingButton) // 로그인 버튼 활성화 여부를 점검함
-instakilogramIdInput.addEventListener('focus', showSavedId); // 저장된 아이디 비밀번호를 화면에 보여줌
-instakilogramIdInput.addEventListener('focusout', hideSavedId); // 저장된 아이디 비밀번호를 화면에서 숨김
-savedId.addEventListener('mouseover', stopFocusOut); // FocusOut 이벤트를 중지시켜 아이디 비밀번호 블럭을 클릭할 수 있게 만듦
-savedId.addEventListener('mouseout', makeHideSavedIdEvent) // focusout 이벤트를 활성화한다.
-savedId.addEventListener('click', printIdAndPassword) // 아이디 비밀번호 칸에 저장된 아이디 비밀번호를 입력한다.
-instakilogramLoginForm.addEventListener('submit', checkLoginInfo) // submit 이벤트가 발생하면 로그인정보를 체크한다.
+// instakilogramBox.addEventListener('click', handleInstakilogramArea) // 인스타킬로그램 버튼 클릭하면 화면에 로그인페이지 나타남
+// instakilogramLoginForm.addEventListener('keyup', checkActivatingButton) // 로그인 버튼 활성화 여부를 점검함
+// instakilogramIdInput.addEventListener('focus', showSavedId); // 저장된 아이디 비밀번호를 화면에 보여줌
+// instakilogramIdInput.addEventListener('focusout', hideSavedId); // 저장된 아이디 비밀번호를 화면에서 숨김
+// savedId.addEventListener('mouseover', stopFocusOut); // FocusOut 이벤트를 중지시켜 아이디 비밀번호 블럭을 클릭할 수 있게 만듦
+// savedId.addEventListener('mouseout', makeHideSavedIdEvent); // focusout 이벤트를 활성화한다.
+// savedId.addEventListener('click', printIdAndPassword); // 아이디 비밀번호 칸에 저장된 아이디 비밀번호를 입력한다.
+// instakilogramLoginForm.addEventListener('submit', eventDefault);
+
+hartButton.addEventListener('click', handleButton); // 좋아요버튼 반응
+bookmarkButton.addEventListener('click', handleButton) // 북마크버튼 반응
+commentButton.addEventListener('mouseup', () => { commentButton.style.transform = 'scale(1)'; }); // 코멘트 버튼 mouseup 하면 크기 돌아옴
+commentButton.addEventListener('mousedown', () => { commentButton.style.transform = 'scale(0.9)'; }); // 코멘트 버튼 mouse 하면 크기 0.9배
+commentButton.addEventListener('mouseout', () => { commentButton.style.transform = 'scale(1)'; }); // 코멘트 버튼 mouseout 하면 크기 돌아옴
+detailViewText.addEventListener('click', onDetailView) // 더보기 버튼 클릭 -> 게시글 펼쳐짐

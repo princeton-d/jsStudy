@@ -1,0 +1,175 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wrap">
+  <div class="open-gate"></div>
+  <form class="welcome-page">
+    <input class="welcome-page__input" type="text" required placeholder="커서에 적용할 text를 입력해주세요." maxlength="20">
+  </form>
+  <section class="menu-box off-view">
+    <div class="morse-code-box contents-box">
+      <p class="morse-code-box__text box-text">morse code</p>
+      <i class="fa-brands fa-hashnode box-icon"></i>
+    </div>
+    <div class="tetris-box contents-box">
+      <p class="tetris-box__text box-text">tetris</p>
+      <i class="fa-solid fa-cubes-stacked box-icon"></i>
+    </div>
+    <div class="calculator-box contents-box">
+      <p class="calculator-box__text box-text">calculator</p>
+      <i class="fa-solid fa-calculator box-icon"></i>
+    </div>
+    <div class="instakilogram-box contents-box">
+      <p class="instakilogram-box__text box-text">instakilogram</p>
+      <i class="fa-solid fa-globe box-icon"></i>
+    </div>
+    <div class="contents-box"></div>
+    <div class="contents-box"></div>
+    <div class="contents-box"></div>
+    <div class="contents-box"></div>
+    <div class="contents-box"></div>
+  </section>
+  <section class="contents-area off-view">
+    <div class="morse-code-area off-view">
+      <form class="morse-input-form">
+        <textarea class="morse-input-area"></textarea>
+        <textarea class="morse-output-area"></textarea>
+      </form>
+    </div>
+    <div class="tetris-area">
+      <div class="wrapper">
+        <div class="game-text">
+          <span>game over</span>
+          <button>replay</button>
+        </div>
+        <div class="playground">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+    <div class="calculator-area">
+      <div class="wrapper">
+        <div class="calculator-body">
+          <div class="calculator-display"></div>
+          <div class="calculator-button">
+            <ul>
+              <li>
+                <ul>
+                  <li><button onclick="calculatorDisplay.innerHTML = ''">C</button></li>
+                  <li><button onclick="calculatorDisplay.innerText += '('">(</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=')'">)</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +='%'">%</button></li>
+                  <li><button
+                      onclick="calculatorDisplay.innerText = calculatorDisplay.innerText.slice(0,-1)">CE</button>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><button>❓</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=1">1</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=2">2</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=3">3</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +='/'">/</button></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><button>❗️</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=4">4</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=5">5</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=6">6</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +='*'">x</button></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><button onclick="calculatorDisplay.innerText +='.'">.</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=7">7</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=8">8</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=9">9</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +='-'">-</button></li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li><button onclick="calculatorDisplay.innerText = eval(calculatorDisplay.innerText)">=</button>
+                  </li>
+                  <li><button>*</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +=0">0</button></li>
+                  <li><button>#</button></li>
+                  <li><button onclick="calculatorDisplay.innerText +='+'">+</button></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="instakilogram-area">
+      <div class="wrapper">
+        <div class="instakilogram-login-box">
+          <img class="instakilogram-logo" src="./assets/images/imstakilogram-logo.png" alt="logo">
+          <form class="instakilogram-login-form">
+            <div><input class="instakilogram-id-input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일"></div>
+            <div><input class="instakilogram-password-input" type="password" placeholder="비밀번호"></div>
+            <div><button class="instakilogram-login-button">로그인</button></div>
+            <div>
+              <div></div>
+              <div>또는</div>
+              <div></div>
+            </div>
+            <div>
+              <div class="facebook-login">
+                <span class="facebook-icon"></span>
+                <span class="facebook-login__text">Facebook으로 로그인</span>
+              </div>
+            </div>
+          </form>
+          <div class="login-error-text">입력한 사용자의 계정정보를 확인해주세요.</div>
+          <div class="find-password">비밀번호를 잊으셨나요?</div>
+        </div>
+        <div class="saved-id">
+          <p>kingGodEmperorWebsteak</p>
+          <p>********************</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+</html>

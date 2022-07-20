@@ -11,138 +11,59 @@
 </head>
 
 <body>
-  <!-- <div class="wrap">
-    <div class="open-gate"></div>
-    <form class="welcome-page">
-      <input class="welcome-page__input" type="text" required placeholder="커서에 적용할 text를 입력해주세요." maxlength="20">
-    </form>
-    <section class="menu-box off-view">
-      <div class="morse-code-box contents-box">
-        <p class="morse-code-box__text box-text">morse code</p>
-        <i class="fa-brands fa-hashnode box-icon"></i>
+  <div class="insta-contents">
+    <div class="insta-contents__header">
+      <div class="insta-contents__header-left">
+        <img src="assets/images/main_images.jpeg">
+        <p>dongvely_22</p>
       </div>
-      <div class="tetris-box contents-box">
-        <p class="tetris-box__text box-text">tetris</p>
-        <i class="fa-solid fa-cubes-stacked box-icon"></i>
+      <div class="insta-contents__header-right">
+        <i class="fa-solid fa-ellipsis"></i>
       </div>
-      <div class="calculator-box contents-box">
-        <p class="calculator-box__text box-text">calculator</p>
-        <i class="fa-solid fa-calculator box-icon"></i>
-      </div>
-      <div class="instakilogram contents-box">
-        <p class="instakilogram-box__text box-text">instakilogram</p>
-        <i class="fa-solid fa-globe box-icon"></i>
-      </div>
-      <div class="contents-box"></div>
-      <div class="contents-box"></div>
-      <div class="contents-box"></div>
-      <div class="contents-box"></div>
-      <div class="contents-box"></div>
-    </section>
-    <section class="contents-area off-view">
-      <div class="morse-code-area off-view">
-        <form class="morse-input-form">
-          <textarea class="morse-input-area"></textarea>
-          <textarea class="morse-output-area"></textarea>
-        </form>
-      </div>
-      <div class="tetris-area">
-        <div class="wrapper">
-          <div class="game-text">
-            <span>game over</span>
-            <button>replay</button>
-          </div>
-          <div class="playground">
-            <ul></ul>
-          </div>
+    </div>
+    <div class="insta-contents__images"><img src="assets/images/kilogram.webp"></div>
+    <div class="insta-contents__footer">
+      <div class="insta-contents__footer__button">
+        <div class="insta-contents__footer__left-button">
+          <i class="fa-regular fa-heart hart-button"></i>
+          <label for="insta-contents__comment-input"><i class="fa-regular fa-comment comment-button"></i></label>
+          <i class="fa-regular fa-paper-plane"></i>
+        </div>
+        <div class="insta-contents__footer__right-button">
+          <i class="fa-regular fa-bookmark bookmark-button"></i>
         </div>
       </div>
-      <div class="calculator-area">
-        <div class="wrapper">
-          <div class="calculator-body">
-            <div class="calculator-display"></div>
-            <div class="calculator-button">
-              <ul>
-                <li>
-                  <ul>
-                    <li><button onclick="calculatorDisplay.innerHTML = ''">C</button></li>
-                    <li><button onclick="calculatorDisplay.innerText += '('">(</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=')'">)</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +='%'">%</button></li>
-                    <li><button
-                        onclick="calculatorDisplay.innerText = calculatorDisplay.innerText.slice(0,-1)">CE</button>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li><button>❓</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=1">1</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=2">2</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=3">3</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +='/'">/</button></li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li><button>❗️</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=4">4</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=5">5</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=6">6</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +='*'">x</button></li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li><button onclick="calculatorDisplay.innerText +='.'">.</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=7">7</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=8">8</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=9">9</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +='-'">-</button></li>
-                  </ul>
-                </li>
-                <li>
-                  <ul>
-                    <li><button onclick="calculatorDisplay.innerText = eval(calculatorDisplay.innerText)">=</button>
-                    </li>
-                    <li><button>*</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +=0">0</button></li>
-                    <li><button>#</button></li>
-                    <li><button onclick="calculatorDisplay.innerText +='+'">+</button></li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="insta-contents__footer__like">
+        <div class="insta-contents__footer__like-imgs">img</div>
+        <p class="insta-contents__footer__like-text"><b>kilogram</b>님 외 <b class="like-count">30명</b>이 좋아합니다.</p>
       </div>
-    </section>
-  </div> -->
-  <div class="instakilogram-area">
-    <div class="wrapper">
-      <div class="instakilogram-login-box">
-        <img class="instakilogram-logo" src="./assets/images/imstakilogram-logo.png" alt="logo">
-        <form class="instakilogram-login-form">
-          <div><input class="instakilogram-id-input" type="text" placeholder="전화번호, 사용자 이름 또는 이메일"></div>
-          <div><input class="instakilogram-password-input" type="password" placeholder="비밀번호"></div>
-          <div><button class="instakilogram-login-button">로그인</button></div>
-          <div>
-            <div></div>
-            <div>또는</div>
-            <div></div>
-          </div>
-          <div>
-            <div class="facebook-login">
-              <span class="facebook-icon"></span>
-              <span class="facebook-login__text">Facebook으로 로그인</span>
-            </div>
-          </div>
+      <div class="insta-contents__footer__text">
+        <p class="insta-contents-text"><b>websteak</b> 난... ㄱ ㅏ끔...<br>
+          눈물을 흘린 ㄷ ㅏ ....<br>
+          ㄱ ㅏ끔은 눈물을 참을 수 없는 내가 별루ㄷ ㅏ...<br>
+          맘이 ㅇ ㅏ ㅍ ㅏ 서....<br>
+          소ㄹ ㅣ치며... 울 수 있 ㄷㅏ는건....<br>
+          좋은ㄱ ㅓ ㅇ ㅑ.....<br>
+          ㅁ ㅓ... 꼭 슬 ㅍ ㅓ ㅇ ㅑ만 우는 건 ㅇ ㅏ니잖 ㅇ ㅏ...^^<br>
+          난... 눈물ㅇ ㅣ ....좋다.....<br>
+          ㅇ ㅏ니...<br>
+          머 리가 ㅇ ㅏ닌.....<br>
+          맘으로.....우는 ㄴ ㅐㄱ ㅏ 좋ㄷ ㅏ.....<br>
+          <br>
+          <span class="tag">
+            #일상 #일상스타그램 #오늘 #데일리 #데일리그램 #일상기록 #인스타일상 #일기 #daily #instadaily #instagood #소통 #좋아요 #선팔 #맞팔 #팔로우 #일상그램
+            #사진스타그램 #데일리스타그램 #일기장 #일기그램 #하루일과 #그냥 #소통해요 #소통스타그램 #선팔하면맞팔
+          </span>
+        </p>
+        <span class="detail-view-text">더 보기</span>
+      </div>
+      <div class="insta-contents__footer__comment">
+        <i class="fa-regular fa-face-smile"></i>
+        <form class="insta-contents__comment-form">
+          <input id="insta-contents__comment-input" class="insta-contents__comment-input" type="text"
+            placeholder="댓글 달기...">
+          <button class="insta-contents__comment-button">게시</button>
         </form>
-        <div class="find-password">비밀번호를 잊으셨나요?</div>
-      </div>
-      <div class="saved-id">
-        <p>kingGodEmperorWebsteak</p>
-        <p>********************</p>
       </div>
     </div>
   </div>
