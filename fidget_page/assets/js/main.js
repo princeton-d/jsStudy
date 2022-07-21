@@ -1,7 +1,4 @@
 'use strict';
-/*
-// variable
-
 // DOM
 const contentsArea = document.querySelector('.contents-area')
 const welcomePageForm = document.querySelector('.welcome-page');
@@ -60,8 +57,8 @@ function outBler(target, s) {
 }
 function mouseMove(e) {
   const cursor = document.querySelector('.cursor-in');
-  cursor.style.left = `${e.pageX + 5}px`;
-  cursor.style.top = `${e.pageY + 5}px`;
+  cursor.style.left = `${e.pageX + 1.3}px`;
+  cursor.style.top = `${e.pageY + 1.3}px`;
 }
 
 
@@ -349,7 +346,6 @@ function removeCalculator() {
 }
 // event handling
 calculatorBox.addEventListener('click', handleCalculatorBox)
-*/
 
 
 
@@ -357,6 +353,7 @@ calculatorBox.addEventListener('click', handleCalculatorBox)
 // DOM
 const instakilogramArea = document.querySelector('.instakilogram-area');
 const instakilogramBox = document.querySelector('.instakilogram-box')
+const instakilogramLoginBox = document.querySelector('.instakilogram-login-box')
 const instakilogramLoginForm = document.querySelector('.instakilogram-login-form');
 const instakilogramIdInput = document.querySelector('.instakilogram-id-input');
 const instakilogramPasswordInput = document.querySelector('.instakilogram-password-input');
@@ -364,14 +361,18 @@ const instakilogramLoginButton = document.querySelector('.instakilogram-login-bu
 const loginErrorText = document.querySelector('.login-error-text');
 const savedId = document.querySelector('.saved-id');
 
-
-const hartButton = document.querySelector('.hart-button');
+const instaContents = document.querySelector('.insta-contents')
+const hartButton = document.querySelectorAll('.hart-button');
 const commentButton = document.querySelector('.comment-button');
 const telegramButton = document.querySelector('.telegram-button');
 const bookmarkButton = document.querySelector('.bookmark-button');
 const detailViewText = document.querySelector('.detail-view-text');
 const instaContentsText = document.querySelector('.insta-contents-text');
 const likeCount = document.querySelector('.like-count');
+const instaCommentArea = document.querySelector('.insta-comment-area');
+const instaComment = document.querySelector('.insta-comment')
+const instaContentsCommentForm = document.querySelector('.insta-contents__comment-form'); // 댓글입력 form
+const instaContentsCommentInput = document.querySelector('.insta-contents__comment-input'); // 댓글입력 input
 
 // setting
 const LOGIN_ID = 'kingGodEmperorWebsteak';
@@ -442,35 +443,57 @@ function eventDefault(e) {
   e.preventDefault();
 }
 function login() {
-
+  instaContents.style.display = 'flex';
+  instakilogramLoginBox.style.display = 'none';
 }
 
 function handleButton(e) {
   e.target.classList.toggle('fa-regular')
   e.target.classList.toggle('fa-solid')
-  checkLikeCount() // 좋아요 숫자 컨트롤
+  checkLikeCount(e) // 좋아요 숫자 컨트롤
 }
-function checkLikeCount() { // 버튼 아이콘에 특정 클레스명이 있으면 좋아요 숫자를 더하거나 빼줌
-  hartButton.classList.contains('fa-regular') ? INSTA_LIKE -= 1 : INSTA_LIKE += 1;
-  likeCount.innerHTML = `${INSTA_LIKE}`;
+function checkLikeCount(e) { // 버튼 아이콘에 특정 클레스명이 있으면 좋아요 숫자를 더하거나 빼줌
+  if (e.target.classList.contains('comment-icon') || e.target.classList.contains('bookmark-button')) { // 타겟이 댓글에 있는 아이콘이거나 북마크 아이콘이라면 return만 함
+    return;
+  } else {
+    e.target.classList.contains('fa-regular') ? INSTA_LIKE -= 1 : INSTA_LIKE += 1;
+    likeCount.innerHTML = `${INSTA_LIKE}`;
+  }
 }
 function onDetailView() {
   detailViewText.style.display = 'none'; // 더보기 텍스트 숨김
   instaContentsText.style.display = 'block'; // display: -webkit-box 상태를 block로 바꿔줌
 }
-// event handling
-// instakilogramBox.addEventListener('click', handleInstakilogramArea) // 인스타킬로그램 버튼 클릭하면 화면에 로그인페이지 나타남
-// instakilogramLoginForm.addEventListener('keyup', checkActivatingButton) // 로그인 버튼 활성화 여부를 점검함
-// instakilogramIdInput.addEventListener('focus', showSavedId); // 저장된 아이디 비밀번호를 화면에 보여줌
-// instakilogramIdInput.addEventListener('focusout', hideSavedId); // 저장된 아이디 비밀번호를 화면에서 숨김
-// savedId.addEventListener('mouseover', stopFocusOut); // FocusOut 이벤트를 중지시켜 아이디 비밀번호 블럭을 클릭할 수 있게 만듦
-// savedId.addEventListener('mouseout', makeHideSavedIdEvent); // focusout 이벤트를 활성화한다.
-// savedId.addEventListener('click', printIdAndPassword); // 아이디 비밀번호 칸에 저장된 아이디 비밀번호를 입력한다.
-// instakilogramLoginForm.addEventListener('submit', eventDefault);
+// 이벤트디폴트
+// comment input 의 text값 삭제
+// 
+function submitInstaComment(e) {
+  e.preventDefault()
+  instaCommentArea.innerHTML += `<div class="insta-comment">
+<span class="insta-comment-text"><b>donghyun</b> ${instaContentsCommentInput.value}</span>
+<i class="fa-regular fa-heart hart-button comment-icon"></i>
+</div>`; // 댓글창에 입력한 text를 html요소로 만들어 댓글영역에 추가해줌
+  instaContentsCommentInput.value = ''; // 댓글입력창 text값 삭제
+  makeHartButtonTrigger() // 새로 만들어진 댓글에 좋아요버튼 기능 추가
+}
+function makeHartButtonTrigger() { // 좋아요버튼 기능 추가
+  const hartButton = document.querySelectorAll('.hart-button');
+  hartButton.forEach(target => { target.addEventListener('click', handleButton) })
+}
 
-hartButton.addEventListener('click', handleButton); // 좋아요버튼 반응
+// event handling
+instakilogramBox.addEventListener('click', handleInstakilogramArea) // 인스타킬로그램 버튼 클릭하면 화면에 로그인페이지 나타남
+instakilogramLoginForm.addEventListener('keyup', checkActivatingButton) // 로그인 버튼 활성화 여부를 점검함
+instakilogramIdInput.addEventListener('focus', showSavedId); // 저장된 아이디 비밀번호를 화면에 보여줌
+instakilogramIdInput.addEventListener('focusout', hideSavedId); // 저장된 아이디 비밀번호를 화면에서 숨김
+savedId.addEventListener('mouseover', stopFocusOut); // FocusOut 이벤트를 중지시켜 아이디 비밀번호 블럭을 클릭할 수 있게 만듦
+savedId.addEventListener('mouseout', makeHideSavedIdEvent); // focusout 이벤트를 활성화한다.
+savedId.addEventListener('click', printIdAndPassword); // 아이디 비밀번호 칸에 저장된 아이디 비밀번호를 입력한다.
+instakilogramLoginForm.addEventListener('submit', eventDefault);
+hartButton.forEach(target => { target.addEventListener('click', handleButton) }) // 좋아요버튼 반응
 bookmarkButton.addEventListener('click', handleButton) // 북마크버튼 반응
 commentButton.addEventListener('mouseup', () => { commentButton.style.transform = 'scale(1)'; }); // 코멘트 버튼 mouseup 하면 크기 돌아옴
 commentButton.addEventListener('mousedown', () => { commentButton.style.transform = 'scale(0.9)'; }); // 코멘트 버튼 mouse 하면 크기 0.9배
 commentButton.addEventListener('mouseout', () => { commentButton.style.transform = 'scale(1)'; }); // 코멘트 버튼 mouseout 하면 크기 돌아옴
 detailViewText.addEventListener('click', onDetailView) // 더보기 버튼 클릭 -> 게시글 펼쳐짐
+instaContentsCommentForm.addEventListener('submit', submitInstaComment);

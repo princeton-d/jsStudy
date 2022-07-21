@@ -3,7 +3,7 @@
   padding: 0;
   outline: 0;
   box-sizing: border-box;
-  /* cursor: none; */
+  cursor: none;
 }
 
 ul {
@@ -335,6 +335,7 @@ body {
   min-height: 410px;
   border-radius: 20px;
   background-color: antiquewhite;
+  overflow: scroll;
 }
 
 .instakilogram-area>.wrapper {
@@ -491,7 +492,7 @@ body {
 }
 
 .insta-contents {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 350px;
   height: 500px;
@@ -627,44 +628,13 @@ body {
   line-height: 18px;
   overflow: hidden;
   text-overflow: ellipsis;
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
   display: -webkit-box;
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: wrap;
 }
 
 .detail-view-text {
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* display: none; */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
-  /* 여기에요 여기!!!!!!!!!!!!!!! */
   white-space: nowrap;
   position: absolute;
   left: 145px;
@@ -680,6 +650,29 @@ body {
 
 .tag {
   color: rgb(0, 55, 107);
+}
+
+.insta-comment-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.insta-comment {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px 16px 0;
+}
+
+.insta-comment-text {
+  font-size: 14px;
+  line-height: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: wrap;
 }
 
 .insta-contents__footer__comment {
@@ -716,4 +709,12 @@ body {
   background-color: transparent;
   color: rgba(0, 149, 256, .4);
   font-weight: 600;
+}
+
+@media all and (max-height:840px) {
+  .insta-contents {
+    position: absolute;
+    top: -200px;
+    left: -175px;
+  }
 }
