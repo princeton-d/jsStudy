@@ -469,12 +469,17 @@ function onDetailView() {
 // 
 function submitInstaComment(e) {
   e.preventDefault()
-  instaCommentArea.innerHTML += `<div class="insta-comment">
+  if (instaContentsCommentInput.value === '') { // 코멘트 입력창을 빈값으로 submit 하려고 하면 return함
+    return;
+  } else {
+    instaCommentArea.innerHTML += `<div class="insta-comment">
 <span class="insta-comment-text"><b>donghyun</b> ${instaContentsCommentInput.value}</span>
 <i class="fa-regular fa-heart hart-button comment-icon"></i>
 </div>`; // 댓글창에 입력한 text를 html요소로 만들어 댓글영역에 추가해줌
-  instaContentsCommentInput.value = ''; // 댓글입력창 text값 삭제
-  makeHartButtonTrigger() // 새로 만들어진 댓글에 좋아요버튼 기능 추가
+    instaContentsCommentInput.value = ''; // 댓글입력창 text값 삭제
+    makeHartButtonTrigger() // 새로 만들어진 댓글에 좋아요버튼 기능 추가
+    instaContents.scrollTo({ top: instaContents.scrollHeight, behavior: "smooth" });
+  }
 }
 function makeHartButtonTrigger() { // 좋아요버튼 기능 추가
   const hartButton = document.querySelectorAll('.hart-button');
