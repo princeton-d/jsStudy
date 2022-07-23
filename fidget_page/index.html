@@ -7,6 +7,10 @@
   <title>fidget page</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/morse_code.js"></script>
+  <script defer src="assets/js/tetris.js"></script>
+  <script defer src="assets/js/calculator.js"></script>
+  <script defer src="assets/js/instakilogram.js"></script>
   <script src="https://kit.fontawesome.com/465b8b0b8e.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,7 +20,7 @@
     <form class="welcome-page">
       <input class="welcome-page__input" type="text" required placeholder="커서에 적용할 text를 입력해주세요." maxlength="20">
     </form>
-    <section class="menu-box off-view">
+    <section class="menu-box">
       <div class="morse-code-box contents-box">
         <p class="morse-code-box__text box-text">morse code</p>
         <i class="fa-brands fa-hashnode box-icon"></i>
@@ -39,8 +43,8 @@
       <div class="contents-box"></div>
       <div class="contents-box"></div>
     </section>
-    <section class="contents-area off-view">
-      <div class="morse-code-area off-view">
+    <section class="contents-area">
+      <div class="morse-code-area">
         <form class="morse-input-form">
           <textarea class="morse-input-area"></textarea>
           <textarea class="morse-output-area"></textarea>
@@ -207,6 +211,7 @@
         </div>
       </div>
     </section>
+    <span class="cursor"></span>
   </div>
 </body>
 

@@ -10,18 +10,12 @@ ul {
   list-style: none;
 }
 
-/* toggle class */
-.cursor-off {
-  cursor: none;
-}
-
-.off-view {
-  display: none !important;
-}
-
-.cursor-in {
+.cursor {
   position: absolute;
-  color: rgb(96, 88, 80);
+  display: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(39, 85, 204);
 }
 
 /* 공통영역 */
@@ -73,7 +67,7 @@ body::-webkit-scrollbar {
   position: absolute;
   width: 100vw;
   height: 100%;
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-around;
@@ -103,8 +97,6 @@ body::-webkit-scrollbar {
   justify-content: center;
   width: 26vw;
   height: 25vh;
-  /* min-width: 150px;
-  min-height: 150px; */
   border-radius: 20px;
   text-align: center;
   background-color: floralwhite;
@@ -125,6 +117,7 @@ body::-webkit-scrollbar {
 
 .contents-area {
   position: absolute;
+  display: none;
   left: 0;
   top: 0;
   width: 100%;
@@ -134,6 +127,7 @@ body::-webkit-scrollbar {
 
 .morse-code-area {
   position: absolute;
+  display: none;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -141,6 +135,7 @@ body::-webkit-scrollbar {
   height: 60vh;
   border-radius: 20px;
   background-color: antiquewhite;
+  animation: blur 0.4s alternate ease-in;
 }
 
 .morse-code-area__close-button {
@@ -185,6 +180,7 @@ body::-webkit-scrollbar {
   min-height: 260px;
   border-radius: 20px;
   background-color: antiquewhite;
+  animation: blur 0.4s alternate ease-in;
 }
 
 .game-text {
@@ -272,6 +268,7 @@ body::-webkit-scrollbar {
   min-height: 260px;
   border-radius: 20px;
   background-color: antiquewhite;
+  animation: blur 0.4s alternate ease-in;
 }
 
 .calculator-area>.wrapper {
@@ -345,6 +342,7 @@ body::-webkit-scrollbar {
   border-radius: 20px;
   background-color: antiquewhite;
   overflow: scroll;
+  animation: blur 0.4s alternate ease-in;
 }
 
 .instakilogram-area::-webkit-scrollbar {
@@ -670,7 +668,8 @@ body::-webkit-scrollbar {
 }
 
 .insta-comment-area {
-  display: flex;
+  /* display: flex; */
+  display: none;
   flex-direction: column;
 }
 
