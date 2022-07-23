@@ -113,7 +113,7 @@ const gameText = document.querySelector('.game-text')
 const restartButton = document.querySelector('.game-text > button')
 
 // setting
-const GAME_ROWS = 15;
+const GAME_ROWS = 10;
 const GAME_COLS = 10;
 
 // variables

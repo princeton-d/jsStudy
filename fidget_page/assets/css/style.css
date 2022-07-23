@@ -27,6 +27,11 @@ ul {
 /* 공통영역 */
 body {
   background-color: rgb(35, 33, 33);
+  overflow: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .wrap {
@@ -98,8 +103,8 @@ body {
   justify-content: center;
   width: 26vw;
   height: 25vh;
-  min-width: 150px;
-  min-height: 150px;
+  /* min-width: 150px;
+  min-height: 150px; */
   border-radius: 20px;
   text-align: center;
   background-color: floralwhite;
@@ -177,7 +182,7 @@ body {
   width: 60vw;
   min-width: 270px;
   height: 60vh;
-  min-height: 390px;
+  min-height: 260px;
   border-radius: 20px;
   background-color: antiquewhite;
 }
@@ -264,7 +269,7 @@ body {
   width: 60vw;
   height: 60vh;
   min-width: 330px;
-  min-height: 280px;
+  min-height: 260px;
   border-radius: 20px;
   background-color: antiquewhite;
 }
@@ -289,6 +294,10 @@ body {
   background-color: #333;
   color: #fff;
   overflow: scroll;
+}
+
+.calculator-display::-webkit-scrollbar {
+  display: none;
 }
 
 .calculator-button>ul {
@@ -332,10 +341,14 @@ body {
   width: 60vw;
   height: 60vh;
   min-width: 370px;
-  min-height: 410px;
+  min-height: 260px;
   border-radius: 20px;
   background-color: antiquewhite;
   overflow: scroll;
+}
+
+.instakilogram-area::-webkit-scrollbar {
+  display: none;
 }
 
 .instakilogram-area>.wrapper {
@@ -498,6 +511,10 @@ body {
   height: 500px;
   background-color: rgb(250, 250, 250);
   overflow: scroll;
+}
+
+.insta-contents::-webkit-scrollbar {
+  display: none;
 }
 
 .insta-contents__header {
@@ -711,10 +728,18 @@ body {
   font-weight: 600;
 }
 
+@media all and (max-height:660px) {
+  .instakilogram-area {
+    align-items: flex-start;
+  }
+}
+
 @media all and (max-height:840px) {
-  .insta-contents {
-    position: absolute;
-    top: -200px;
-    left: -175px;
+  .instakilogram-area {
+    align-items: flex-start;
+  }
+
+  .instakilogram-login-box {
+    margin: 50px 0;
   }
 }
