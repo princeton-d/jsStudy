@@ -114,6 +114,7 @@ function submitInstaComment(e) {
   if (instaContentsCommentInput.value === '') { // 코멘트 입력창을 빈값으로 submit 하려고 하면 return함
     return;
   } else {
+    console.log('hihi')
     instaCommentArea.innerHTML += `<div class="insta-comment">
 <span class="insta-comment-text"><b>donghyun</b> ${instaContentsCommentInput.value}</span>
 <i class="fa-regular fa-heart hart-button comment-icon"></i>

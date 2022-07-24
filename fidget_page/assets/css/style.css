@@ -668,8 +668,7 @@ body::-webkit-scrollbar {
 }
 
 .insta-comment-area {
-  /* display: flex; */
-  display: none;
+  display: flex;
   flex-direction: column;
 }
 
