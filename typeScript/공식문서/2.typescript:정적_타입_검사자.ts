@@ -3,10 +3,28 @@
 // 정적 타입 검사자인 typescript 는 프로그램을 실행시키기 전에 값의 종류를 기반으로 프로그램의 오류를 찾습니다.
 // 예를 들어, 1번 파일의 마지막 예시의 오류가 있는 이유는 obj 의 타입때문입니다. 다음은 typescript 에서 볼 수 있는 오류입니다.
 
-// const obj = { width: 10, height: 15 };
-// const area = obj.width * obj.heigth;
+const obj = { width: 10, height: 15 };
+const area = obj.width * obj.heigth;
 // 'heigth' 속성이 '{ width: number; height: number; }' 형식에 없습니다. 'height'을(를) 사용하시겠습니까?
 
 // 타입이 있는 javascript 의 상위 집합
 // 그렇다면 typescript 는 javascript 와 어떤 관계일까요?
+
+// 구문(syntax)
 // typescript 는 JS 의 구문이 허용되는, javascript 의 상위 집합 언어입니다.
+// 구문은 프로그램을 만들기 위해 코드를 작성하는 방법을 의미합니다.
+// 예를 들어, 다음 코드는 ) 이 없으므로 구문 오류입니다.
+// let a = (4
+// typescript 는 독특한 구문 때문에 javascript 코드를 오류로 보지 않습니다.
+// 즉, 어떻게 작성되었는지 모르지만 작동하는 javascript 코드를 typescript 파일에 넣어도 잘 작동합니다.
+
+// 타입(type)
+// 그러나 typescript 는 다른 종류의 값들을 사용할 수 있는 방법이 추가된, 타입이 있는 상위 집합입니다.
+// 위의 obj.jeigth 오류는 구문 오류가 아닌, 값의 종류(타입)를 잘못 사용해서 생긴 오류입니다.
+// 또 다른 예시로, 아래와 같은 javascript 코드가 브라우저에서 실행될 떄, 다음과 같은 값이 출력될 것입니다.
+console.log(4 / []);
+// 구문적으로 옳은 위 코드는 javascript 에서는 NaN 을 출력합니다.
+// 그러나 typescript 는 배열로 숫자를 나누는 연산이 옳지 않다고 판단하고 오류를 발생시킵니다.
+// 실제로 어떤 일이 일어나는지 보려는 의도로 숫자를 배열로 나눌 수 있지만, 대부분은 프로그래밍 실수입니다.
+// typescript 의 타입 검사자는 일반적인 오류를 최대한 많이 검출하면서 올바른 프로그램을 만들 수 있게 설계되었습니다.
+// 만약 javascript 파일의 코드를 typescript 코드로 옮기면, 코드를 어떻게 작성했는지에 따라 타입 오류를 볼 수 있습니다.
