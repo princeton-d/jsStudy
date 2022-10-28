@@ -8,5 +8,9 @@ const nico = {
 function divide(a, b) {
   return a / b;
 }
-
 // divide('hello'); -> 2개의 인수가 필요한데 1개를 가져왔습니다.
+
+const player = {
+  age: 12,
+};
+// player.age = false -> 'boolean' 형식은 'number' 형식에 할당할 수 없습니다.
