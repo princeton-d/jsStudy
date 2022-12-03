@@ -1,0 +1,1 @@
+export const testDiv = document.querySelector('.test')
