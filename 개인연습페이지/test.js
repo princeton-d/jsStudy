@@ -1,5 +1,3 @@
-import { testDiv } from "./moduleItem.js";
-
 window.addEventListener('load', function () {
   var allElements = document.getElementsByTagName('*');
   Array.prototype.forEach.call(allElements, function (el) {
@@ -16,5 +14,3 @@ window.addEventListener('load', function () {
     }
   });
 });
-
-console.log(testDiv)
