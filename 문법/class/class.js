@@ -19,12 +19,12 @@ class FoodFighter {
 사람들은 저를 ${this.nickname}으로 부르곤 하죠.`)
   }
   // static: 인스턴스에 포함되지 않고 클래스 레벨에서 호출할 수 있는 함수이다.
-  static food() {
-    console.log(`fighting food is 햄버거`)
+  static food(food) {
+    console.log(`fighting food is ${food}`)
   }
 }
 // donghyun은 FoodFighter클래스의 인스턴스이다!
 const donghyun = new FoodFighter('kimdonghyun', 'samgyeobsal(pork belly)admiral');
 donghyun.selfIntroduction();
 // 스테틱함수는 class에서 바로 호출이 가능하다. donghyun인스턴스에는 포함되어 있지 않다. (콘솔찍어도 안나옴)
-FoodFighter.food();
+FoodFighter.food('피자');
