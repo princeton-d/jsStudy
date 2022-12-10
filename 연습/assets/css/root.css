@@ -1,0 +1,15 @@
+:root {
+  /* color */
+  --borderColor1: #e6e6e6;
+  --color-white: #fff;
+  --color-black: #333;
+  --color-gray: #666;
+  --color-darkBlack: #000;
+  --color-red: #bf1e2e;
+  --color-blue: #4876ef;
+
+  /* font weight */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+}
