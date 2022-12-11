@@ -1,1 +1,0 @@
-export const button = document.getElementById('button1')
