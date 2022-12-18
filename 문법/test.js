@@ -32,4 +32,20 @@ function string이_객체인_이유() {
   console.log(strObj)
 }
 
-string이_객체인_이유()
+function 깊은_복사와_얕은_복사() {
+  const obj1 = { x: { y: 1 } };
+  const obj2 = { ...obj1 }
+  console.log(obj1)
+  console.log(obj2)
+}
+
+/**
+ * 아래와 같은 함수를 만들어서 실행해보면 add is not defined 라는 오류가 발생한다.
+ * 우리가 평소에 사용하는 function add(x, y) { console.log(x + y) } 라는 함수를 add(x, y) 이렇게 호출할 수 있는 이유는 저 add 자체가 식별자가 되는 것이 아니라, 자바스크립트엔진이 암묵적으로 add 라는 식별자를 만들어주기 때문에 사용할 수 있는것이었다.
+ */
+function 함수_이름은_함수_식별자가_아니다() {
+  const realAdd = function add(x, y) {
+    console.log(x + y);
+  };
+  add(1, 2);
+}
