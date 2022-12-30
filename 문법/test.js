@@ -49,3 +49,7 @@ function 함수_이름은_함수_식별자가_아니다() {
   };
   add(1, 2);
 }
+
+const returnObj = (one, two) => ({ one, two })
+
+console.log(returnObj('객', '체'))
