@@ -50,6 +50,28 @@ function 함수_이름은_함수_식별자가_아니다() {
   add(1, 2);
 }
 
-const returnObj = (one, two) => ({ one, two })
+function 객체를_리턴하는_함수() {
+  const returnObj = (one, two) => ({ one, two })
+  console.log(returnObj('객', '체'))
+}
 
-console.log(returnObj('객', '체'))
+/**
+ * func2 함수 내부에 func1 함수가 있다.
+ * func2 함수 내부에 있는 func1 함수는 func2 함수 내부에서 선언한 지역레벨 스코프를 가지는 함수이기 때문에 전역 스코프에 있는 func1 함수에 영향을 받지 않고 지역레벨에서 사용이 된다.
+ */
+function 전역_로컬_스코프_함수() {
+  function func1(props) {
+    console.log(props + '글로벌 스코프')
+  }
+
+  function func2(props) {
+    function func1(props) {
+      console.log(props + '로컬 스코프')
+    }
+    func1(props)
+  }
+  func1('func1 호출: ')
+  func2('func2 호출: ')
+}
+
+전역_로컬_스코프_함수()
