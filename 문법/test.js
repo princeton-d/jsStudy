@@ -74,4 +74,19 @@ function 전역_로컬_스코프_함수() {
   func2('func2 호출: ')
 }
 
-전역_로컬_스코프_함수()
+/**
+ * 스코프는 함수
+ */
+function var_의_함정() {
+  var a = 10
+  const b = 10
+
+  if (true) {
+    var a = 100
+    const b = 100
+  }
+  console.log(a)
+  console.log(b)
+}
+
+var_의_함정()
