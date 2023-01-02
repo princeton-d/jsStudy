@@ -130,3 +130,29 @@ function 클래스는_함수인가() {
   const test2 = new Tests(1, 2)
   console.log(typeof (test2))
 }
+
+/**
+ * 우리가 타입 변환을 위해 자주 사용했던 Number(), String(), Boolean() 타입은 new 생성자를 사용함으로 원시타입이 아닌 객체로 생성할 수 있다.
+ */
+function new_가_있고_없고의_차이() {
+  const num1 = Number('123')
+  const num2 = new Number('123')
+
+  console.log(`num1: ${num1}, ${typeof (num1)}`)
+  console.log(`num2: ${num2}, ${typeof (num2)}`)
+  console.log(num2)
+
+  const str1 = String(123)
+  const str2 = new String(123)
+
+  console.log(`str1: ${str1}, ${typeof (str1)}`)
+  console.log(`str2: ${str2}, ${typeof (str2)}`)
+  console.log(str2)
+
+  const boolean1 = Boolean('false?')
+  const boolean2 = new Boolean('false?')
+
+  console.log(`boolean1: ${boolean1}, ${typeof (boolean1)}`)
+  console.log(`boolean2: ${boolean2}, ${typeof (boolean2)}`)
+  console.log(boolean2)
+}
