@@ -111,4 +111,22 @@ function 상위_스코프_결정_방식() {
   steak()
 }
 
-상위_스코프_결정_방식()
+function 클래스는_함수인가() {
+  class Test {
+    constructor(one, two) {
+      this.one = one;
+      this.two = two;
+    }
+  }
+
+  const test = new Test(1, 2)
+  console.log(typeof (test))
+
+  function Tests(one, two) {
+    this.one = one;
+    this.two = two;
+  }
+
+  const test2 = new Tests(1, 2)
+  console.log(typeof (test2))
+}
