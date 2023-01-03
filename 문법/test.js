@@ -156,3 +156,16 @@ function new_가_있고_없고의_차이() {
   console.log(`boolean2: ${boolean2}, ${typeof (boolean2)}`)
   console.log(boolean2)
 }
+
+/**
+ * 모든 객체는 프로토타입을 가지고 있다.
+ */
+function 프로토타입() {
+  const prototype = {}
+  console.dir(prototype)
+  console.log(prototype.__proto__) // es6 현재 표준이긴 하지만 권장하지 않는 방법이고 없어질 예정이라고 함.
+  console.log(Object.getPrototypeOf(prototype)) // 프로토타입에 점근하려면 이 방법을 사용하는게 좋을거같다.
+  prototype.name = 'kim'
+  console.log(prototype) // 콘솔로 그냥 객체에 접근해서는 name 의 정보를 다 볼 수 없네
+  console.log(Object.getOwnPropertyDescriptor(prototype, 'name')) // name 의 프로토타입을 볼 수 있음
+}
