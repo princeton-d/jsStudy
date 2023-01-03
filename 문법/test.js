@@ -169,3 +169,34 @@ function 프로토타입() {
   console.log(prototype) // 콘솔로 그냥 객체에 접근해서는 name 의 정보를 다 볼 수 없네
   console.log(Object.getOwnPropertyDescriptor(prototype, 'name')) // name 의 프로토타입을 볼 수 있음
 }
+
+function getter_메서드() {
+  const person = {
+    firstName: 'kim',
+    lastName: 'donghyun',
+    get fullName() { // 객채의 getter 메서드는 매개 변수를 사용할 수 없다.
+      console.log(`${this.firstName} ${this.lastName}이다 이자식아!!`)
+      return `${this.firstName} ${this.lastName}이다 이자식아`
+    },
+    get fullName2() {
+      console.log(`이번엔 ${this.lastName} ${this.firstName}이다 이자식아~~`)
+    }
+  }
+  person.fullName
+  person.fullName2
+}
+
+function setter_메서드() {
+  const person = {
+    firstName: 'kim',
+    lastName: 'donghyun',
+    set fullName(x) { // 객체의 setter 매서드는 매개 변수를 하나만 사용할 수 있다
+      this.firstName = `${x}아니야~`
+      this.lastName = `${x}아니라고~~`
+    }
+  }
+  person.fullName = '안녕' // 객체에서 평범하게 할당한것처럼 보이지만
+  console.log(person.firstName, person.lastName) // 결과는 다르다ㅇㅂㅇ
+}
+
+setter_메서드()
