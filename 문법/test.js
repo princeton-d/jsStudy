@@ -199,4 +199,22 @@ function setter_메서드() {
   console.log(person.firstName, person.lastName) // 결과는 다르다ㅇㅂㅇ
 }
 
-setter_메서드()
+function 호출_스택() {
+  function one() {
+    two();
+    console.log('one');
+  };
+
+  function two() {
+    three();
+    console.log('two');
+  };
+
+  function three() {
+    console.log('three');
+  };
+
+  one()
+};
+
+호출_스택()
