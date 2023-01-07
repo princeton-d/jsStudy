@@ -220,3 +220,16 @@ function 호출_스택() {
 
   one()
 };
+
+function 구조_분해_할당() {
+  const example = { a: 123, b: { c: 456, d: 789 }, e: 321, f: { g: 654, h: 987 } }
+  const a = example.a
+  const c = example.b.c
+  console.log(a, c)
+  const { e, f: { h } } = example
+  console.log(e, h)
+
+  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+  const [x, , y, , , z] = arr
+  console.log(x, y, z)
+}
