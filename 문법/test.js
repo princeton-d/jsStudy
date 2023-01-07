@@ -199,6 +199,10 @@ function setter_메서드() {
   console.log(person.firstName, person.lastName) // 결과는 다르다ㅇㅂㅇ
 }
 
+/**
+ * 코드의 호출 순서 three -> two -> one
+ * 호출 스택에 one two three 순으로 쌓이지만 실행 순서는 반대로 실행된다.
+ */
 function 호출_스택() {
   function one() {
     two();
@@ -216,5 +220,3 @@ function 호출_스택() {
 
   one()
 };
-
-호출_스택()
