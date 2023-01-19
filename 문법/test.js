@@ -250,4 +250,22 @@ function 클래스() {
   console.log(apple)
   apple.printFruit()
 };
-클래스()
+// 클래스()
+
+function 클래스의_static() {
+  class Fruit {
+    constructor(name, name2) {
+      this.name = name,
+        this.name2 = name2
+    }
+    printFruit = () => {
+      console.log(this.name);
+      console.log(this.name2);
+    }
+    static makeRandomFruit = () => { // 클래스 레벨의 함수는 만들어진 인스턴스가 아니라 클래스인 Fruit 에서 접근이 가능하다. this 를 참조할 수 없다.
+      return new Fruit('banana', 'banana2');
+    }
+  }
+  console.log(Fruit.makeRandomFruit());
+}
+클래스의_static();
