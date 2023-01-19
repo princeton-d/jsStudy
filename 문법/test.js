@@ -233,3 +233,21 @@ function 구조_분해_할당() {
   const [x, , y, , , z] = arr
   console.log(x, y, z)
 }
+
+function 클래스() {
+  class Fruit {
+    constructor(name, name2) {
+      this.name = name,
+        this.name2 = name2
+    }
+    printFruit = () => {
+      console.log(this.name);
+      console.log(this.name2)
+    }
+  }
+
+  const apple = new Fruit('apple', 'applele');
+  console.log(apple)
+  apple.printFruit()
+};
+클래스()
