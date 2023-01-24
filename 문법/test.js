@@ -268,4 +268,4 @@ function 클래스의_static() {
   }
   console.log(Fruit.makeRandomFruit());
 }
-클래스의_static();
+// 클래스의_static();
